@@ -22,11 +22,11 @@ defmodule Day02Test do
   aabcdd
   abcdee
   ababab
-  """ |> Day02.part1 |> Tuple.to_list |> Enum.reduce(1, fn x, acc -> x*acc end) == 12
+  """ |> Day02.part1 == 12
   end 
 
   test "Part1: puzzle" do
-    assert Utils.load("day_02.input") |> Day02.part1 |> Tuple.to_list |> Enum.reduce(1, fn x, acc -> x*acc end) == 5000
+    assert Utils.load("day_02.input") |> Day02.part1 == 5000
   end
 
   test "Part2: examples" do

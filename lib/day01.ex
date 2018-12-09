@@ -76,10 +76,26 @@ defmodule Day01 do
 
   _Starting with a frequency of zero, what is the resulting frequency after
   all of the changes in frequency have been applied?_
+
+  ## Usage
+
+  Computes the frequence modulation by summing up the individual values.
+
+  Result `Integer`.
+
+  ## Examples
+
+      iex> Day01.part1("+1\\n+1\\n+1")
+      3
+      iex> Day01.part1("+1\\n+1\\n-2")
+      0
+      iex> Day01.part1("-1\\n-2\\n-3")
+      -6
   """
   def part1(input) do
-    data = input |> Day01.parse
-    data |> Enum.sum
+    input 
+    |> Day01.parse
+    |> Enum.sum
   end
 
   @doc """
@@ -116,6 +132,21 @@ defmodule Day01 do
   * `+7, +7, -2, -7, -4` first reaches `14` twice.
 
   _What is the first frequency your device reaches twice?_
+
+  ## Usage
+
+  Computes the first repeating frequency based on the given input string.
+
+  ## Examples
+
+      iex> Day01.part1("1\\n-1")
+      0
+      iex> Day01.part2("+3\\n+3\\n+4\\n-2\\n-4")
+      10
+      iex> Day01.part2("-6\\n+3\\n+8\\n+5\\n-6")
+      5
+      iex> Day01.part2("+7\\n+7\\n-2\\n-7\\n-4")
+      14
   """
   def part2(input) do
     input |> Day01.parse |> (&modulate(0, &1, MapSet.new(), &1)).()

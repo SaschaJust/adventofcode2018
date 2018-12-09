@@ -1,11 +1,50 @@
 # Advent of Code 2018
 
-https://adventofcode.com/2018
+This repository contains solutions to the [Advent of Code](https://adventofcode.com/2018) puzzles of 2018 in [Elixir](https://elixir-lang.org).
+
+## Usage
+
+First, you have to fetch the dependencies using:
+```
+mix deps.get
+```
+
+### Building
+
+You can build the hex package using:
+
+```
+mix hex.build
+```
+
+### Tests
+
+You can run the tests (including the puzzle inputs) using:
+
+```
+mix test
+```
+
+### Documentation
+
+You can build the documentation using:
+
+```
+mix docs
+```
+
+### Benchmarks
+
+You can run the available benchmarks using:
+
+```
+mix bench
+```
 
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `day07` to your list of dependencies in `mix.exs`:
+by adding `aoc2018` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -15,7 +54,4 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/day07](https://hexdocs.pm/day07).
-
+Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc). 

@@ -23,22 +23,6 @@ defmodule Day02 do
   """
 
   @doc """
-  Loads the puzzle input from the file in the 'day_XX' root directory.
-
-  ## Examples
-
-      iex> Utils.load("day_02.input") |> String.slice(0, 4)
-      "ymdr"
-
-  """
-  def load do
-    case File.read((__ENV__.file |> Path.dirname) <> "/../../day_02.input") do
-      {:ok, content} -> content
-      _ -> raise "Could not find input file. Please run from the exs file location."
-    end
-  end
-
-  @doc """
   Parses the line-based input into a list of integers.
 
   ## Examples
@@ -83,12 +67,24 @@ defmodule Day02 do
   Of these box IDs, four of them contain a letter which appears exactly 
   twice, and three of them contain a letter which appears exactly three 
   times. Multiplying these together produces a checksum of `4 * 3 = 12`.
+
+  ## Usage
+
+  Counts and multiplies all double and triple occuring characters in the
+  input string.
+
+  ## Examples
+
+      iex> "abcdef\\nbababc\\nabbcde\\nabcccd\\naabcdd\\nabcdee\\nababab" |> Day02.part1
+      12
   """
   def part1(input) do
     input
       |> preprocess 
       |> Enum.map(&Day02.occurance/1)
       |> Enum.reduce({0, 0}, fn {two, three}, {a, b} -> {a + (two && 1 || 0), b + (three && 1 || 0)} end)
+      |> Tuple.to_list 
+      |> Enum.reduce(fn x, acc -> x*acc end)
   end
 
   @doc """
