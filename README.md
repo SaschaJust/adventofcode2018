@@ -1,5 +1,7 @@
 # Advent of Code 2018
 
+[![Build Status](https://travis-ci.com/SaschaJust/adventofcode2018.svg?branch=master)](https://travis-ci.com/SaschaJust/adventofcode2018)
+
 This repository contains solutions to the [Advent of Code](https://adventofcode.com/2018) puzzles of 2018 in [Elixir](https://elixir-lang.org).
 
 ## Usage

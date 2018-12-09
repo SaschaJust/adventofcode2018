@@ -23,3 +23,5 @@ erl_crash.dump
 aoc2018-*.tar
 
 /bench/snapshots/
+
+mix.lock
